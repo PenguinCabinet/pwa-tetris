@@ -6,7 +6,7 @@ import { isFocus } from '../unit/'
 import { blankMatrix, lastRecord, maxPoint, blockType } from '../unit/const'
 import Block from '../unit/block'
 import { hasWebAudioAPI } from '../unit/music'
-const { fromJS, List } = require('immutable')
+//const { fromJS, List } = require('immutable')
 Vue.use(Vuex)
 
 let clearLinesInitState = lastRecord &&
