@@ -1,6 +1,8 @@
 # pwa-tetris
 
-Essentially a PWA version of http://binaryify.github.io/vue-tetris/
+This is added a function to show where the block will fall.\
+This repository is forked by [pwa-tetris](https://github.com/maurop123/pwa-tetris).\
+[pwa-tetris](https://github.com/maurop123/pwa-tetris) is a PWA version of [vue-tetris](https://github.com/Binaryify/vue-tetris)
 
 ## Project setup
 ```
