@@ -7,7 +7,7 @@ export default {
   props: ['cur', 'reset', 'propMatrix'],
   watch: {
     $props: {
-      handler(val = {}, oldVal) {
+      handler(val = {} ) {
         this.propsChange(val)
       },
       deep: true
@@ -23,10 +23,10 @@ export default {
     matrix = matrix.toJS()
     return (
       <div class="matrix">
-        {matrix.map((p, k1) =>
+        {matrix.map((p ) =>
           <p>
-            {p.map((e, k2) =>
-              <b class={(e === 1 ? 'c' : '') + (e === 2 ? 'd' : '')} />
+            {p.map((e) =>
+              <b class={(e === 1 ? 'c' : '') + (e === 2 ? 'd' : '') + (e === 3 ? 'e' : '') } />
             )}
           </p>
         )}

@@ -37,7 +37,7 @@ const unit = {
           return false
         }
         if (n) {
-          if (matrix.get(xy[0] + k1).get(xy[1] + k2)) {
+          if (matrix.get(xy[0] + k1).get(xy[1] + k2)!=0&&matrix.get(xy[0] + k1).get(xy[1] + k2)<=2) {
             return false
           }
           return true
@@ -50,7 +50,7 @@ const unit = {
     // 是否达到消除状态
     const clearLines = []
     matrix.forEach((m, k) => {
-      if (m.every(n => !!n)) {
+      if (m.every(n => n!=0&&n<=2)) {
         clearLines.push(k)
       }
     })
