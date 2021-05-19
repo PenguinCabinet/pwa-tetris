@@ -128,7 +128,7 @@ const states = {
                                 store.commit('matrix', matrix)
                                 states.fallFInterval=setTimeout(
                                         draw_fall_future,
-                                        10
+                                        1
                                 )
                         } 
                 }
@@ -171,7 +171,7 @@ const states = {
                 clearTimeout(states.fallFInterval)
                 states.fallFInterval=setTimeout(
                         draw_fall_future,
-                        10
+                        1
                 )
         },
 
