@@ -78,9 +78,18 @@ const states = {
                 let cur = state.cur
 
                 const draw_fall_future=()=>{
+                                console.log(state.lock)
+                        /*
+                        if(state.lock){
+                                return
+                        }
+                        */
                         //let next_f = cur.fall()
                         state = store.state
                         cur = state.cur
+                        if(cur.fall===null){
+                                return
+                        }
                         const next = cur.fall()
                         let next_f = cur.fall()
                         if (want(next, state.matrix)) {
@@ -105,7 +114,7 @@ const states = {
 
                                 shape.forEach((m, k1) =>
                                         m.forEach((n, k2) => {
-                                                if (n && next.xy[0] + k1 >= 0) {
+                                                if (n && next_f.xy[0] + k1 >= 0) {
                                                         // 竖坐标可以为负
                                                         let line = matrix.get(next_f.xy[0] + k1)
                                                         line = line.set(next_f.xy[1] + k2, 3)
@@ -114,14 +123,14 @@ const states = {
                                         })
                                 ) 
                                 //let true_matrix= fromJS(JSON.parse(JSON.stringify(matrix.toJS())))
-                                
-                                store.commit('matrix', matrix)
-                        } 
-                        states.fallFInterval=setTimeout(
-                                draw_fall_future,
-                                1
-                        )
 
+                                 
+                                store.commit('matrix', matrix)
+                                states.fallFInterval=setTimeout(
+                                        draw_fall_future,
+                                        1
+                                )
+                        } 
                 }
 
                 const fall = () => {
@@ -168,6 +177,7 @@ const states = {
 
         // 一个方块结束, 触发下一个
         nextAround: (matrix, stopDownTrigger) => {
+                clearTimeout(states.fallFInterval)
                 clearTimeout(states.fallInterval)
                 store.commit('lock', true)
                 store.commit('matrix', matrix)
@@ -225,12 +235,14 @@ const states = {
 
         // 消除行
         clearLines: (matrix, lines) => {
+                'use strict';
+                //(null).A;
+                /*
                 if(lines===undefined){
-                        return;
                 }
                 if(lines.forEach===undefined){
-                        return;
                 }
+                */
                 console.log(lines)
                 const state = store.state
                 let newMatrix = fromJS(matrix)

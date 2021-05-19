@@ -50,6 +50,8 @@ export default {
         this.isOver = overs
       }, 0)
       if (clears && !this.clearLines) {
+        console.log(this.clearLines!==false);
+              console.log(clears && !this.clearLines&&this.clearLines!==false);
         this.clearAnimate(clears)
       }
       if (!clears && overs && !this.isOver) {

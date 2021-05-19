@@ -12,5 +12,15 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   render: h => h(App),
-  store: store
+  store: store//,
+
+        /*
+  name: 'Tetris ペンギン内閣 Edition',
+  metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Tetris ペンギン内閣 Edition'//,
+      // all titles will be injected into this template
+      //titleTemplate: '%s | My Awesome Webapp'
+  }
+  */
 })
