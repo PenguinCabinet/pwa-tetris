@@ -1,6 +1,6 @@
 {
   "lan": ["cn", "en", "fr", "fa","ja"],
-  "default": "cn",
+  "default": "ja",
   "data": {
     "title": {
       "cn": "俄罗斯方块",
